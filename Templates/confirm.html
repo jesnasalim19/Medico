@@ -1,0 +1,19 @@
+<style>
+    a{
+        color: brown;
+        text-decoration: none;
+    }
+</style>
+{% load static %}
+<body style="background-image:url({% static 'images/booking.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <a href="/AdminApp/adminhome">Go Back</a>
+    <center>
+   
+      
+    
+    
+    {% for ls in success %}
+    <h1 style="color:rgb(134, 21, 126);margin-top: 300px;">Order Confirmed for {{ls.fn}}</h1>
+    {% endfor %}
+   </center>
+</body>

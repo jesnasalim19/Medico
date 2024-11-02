@@ -1,0 +1,54 @@
+{% load static %}
+<style>
+    .card{
+        text-align:center;
+        width:500px;
+        height:700px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        float: left;
+        margin-left: 20px;
+        padding-top: 10px;
+    }
+    .btn{
+        background-color: palevioletred;
+        border-color: palevioletred;
+        color:darkred;
+        font-size: 20px;
+    }
+    #go{
+        float: left;
+        color:purple;
+        font-size: 25px;
+        text-decoration: none;
+    }
+    
+    
+</style>
+<body>
+    <a href="/newstockview"id="go">Go Back</a>
+{% for ls in bill %}
+<div class="card"style="background-image:url({% static 'images/bill.jpg' %})">
+    <h1>Bill</h1>
+    
+    <p>----------------------</p>
+    <h2>Name: {{ls.fn}}</h2>
+    <p>----------------------</p>
+    <h2>Medicine: {{ls.pro}}</h2>
+    <p>----------------------</p>
+    <h2>Quantity: {{ls.qty}}</h2>
+    <p>----------------------</p>
+    <h2>Price: {{ls.prc}}</h2>
+    <p>----------------------</p>
+    <h2>Total: {{ls.tot}}</h2>
+    <button class="btn" onclick="bill(this)">Print</button>
+</div>
+{% endfor %}
+
+   
+<script>
+    function bill(btn){
+        window.print();
+    }
+</script>
+</body>

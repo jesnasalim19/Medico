@@ -1,0 +1,54 @@
+{% load static %}
+<style>
+    .card{
+        margin-top: 20px;
+        margin-left: 20px;
+        box-shadow: 0 2px 4px 0;
+        width:300px;
+        height:400px;
+        float: left;
+        background-color: aliceblue;
+    }
+    button{
+        background-color: brown;
+        border-color: brown;
+        color:aliceblue;
+    }
+    a{
+        text-decoration: none;
+        color:aliceblue;
+    }
+    .sl{
+        color:brown;
+        text-decoration: none;
+    }
+</style>
+<body bgcolor="pink">
+    <a href="/ShopOwner/shophome"class="sl">Go back</a>
+    <center>
+    <form action="/ShopOwner/salesbillnew"method="post">
+        {% csrf_token %}
+        <h2 style="color:darkslateblue;">{{success}}</h2>
+        <button><a href="/ShopOwner/salesbillnew">salesbill</a></button>
+        {% for ls in data %}
+        <div class="card">
+           
+            <h3>Medicine Name:  {{ls.mnm}}</h3>
+            -----------------------------------
+            <h3>Price: {{ls.mpr}}</h3>
+            
+            -----------------------------------
+            <h3>Mfg Date: {{ls.mfg}}</h3>
+            
+            -----------------------------------
+            <h3>Expiry Date:  {{ls.exp}}</h3>
+           
+            -----------------------------------
+            <h3>Quantity:  {{ls.qt}}</h3>
+           
+            -----------------------------------
+        </div>
+        {% endfor %}
+    </form>
+    </center>
+</body>

@@ -1,0 +1,79 @@
+{% load static %}
+<style>
+    table{
+        padding-top: 40px;
+    }
+    h1{
+        padding-top: 40px;
+        color: rgb(142, 19, 199);
+        
+    }
+    th{
+       background-color: rgb(245, 157, 42);
+       color:rgb(18, 119, 207);
+       font-size:20;
+    }
+    tr{
+        background-color: rgb(142, 19, 199);
+       color:rgb(228, 199, 225);
+       font-size:20;
+
+    }
+    button{
+        background-color: lightpink;
+        border-color: lightpink ;
+        
+    }
+    a{
+        text-decoration: none;
+        color:aliceblue;
+    }
+</style>
+<body style="background-image:url({% static 'images/booking.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <a href="/AdminApp/adminhome">Go Back</a>
+    <center>
+    <form method="post"action="/AdminApp/userview">
+      
+    
+    {% csrf_token %}
+    
+    <h1>ORDERS</h1>
+    <table>
+        <thead>
+           
+            <th>Total Amount</th>
+            <th>Card Holder Name</th>
+            <th>Mobile Number</th>
+            <th>Card Number</th>
+            <th>Card Type</th>
+            <th>Expiry Date</th>
+            <th>CVV</th>
+            <th>Shipping Address</th>
+            <th>Action</th>
+            
+        </thead>
+        <tbody>
+            {% for m in data %}
+            <tr>
+                
+                <td>{{m.tot}}</td>
+                <td>{{m.cnm}}</td>
+                <td>{{m.mob}}</td>
+                <td>{{m.cno}}</td>
+                <td>{{m.cty}}</td>
+                <td>{{m.exp}}</td>
+                <td>{{m.cvv}}</td>
+                <td>{{m.shp}}</td>
+                <td>
+                    <a href="/moredetail?ordno={{m.orderno}}">
+                        MoreDetail
+                    </a>
+                </td>
+               
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+</center>
+</body>

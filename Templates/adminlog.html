@@ -1,0 +1,51 @@
+{% load static %}
+<body style="background-image: url({% static 'images/adminlog.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <style>
+        form{
+            box-shadow: 0 2px 4px 0;
+            box-sizing: border-box;
+            width: 300px;
+            height:400px;
+            margin-top: 50px;
+            
+        }
+        
+        h1{
+            color:indigo;
+        }
+        table{
+            color:brown;
+            font-size:20px;
+            
+        }
+       button{
+        background-color: brown;
+        border-color: brown;
+        color:aliceblue
+       }
+    </style>
+    
+    <center>
+    <form action="/AdminApp/"method="post">
+        {% csrf_token %}
+        <img src="{% static 'images/keyadmi.jpg' %}"style="width:100px;height:100px;border-radius:20px;">
+        
+        <h1>SIGN IN</h1>
+        <table>
+            <tr>
+                <td><label>EMAIL</label></td>
+                <td><input type="email"name="eml"></td>
+            </tr>
+            <tr>
+                <td><label>PASSWORD</label></td>
+                <td><input type="password"name="psw"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">LOGIN</button></td>
+            </tr>
+        </table>
+    </form>
+    </center>
+
+</body>

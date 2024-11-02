@@ -1,0 +1,44 @@
+{% load static %}
+<style>
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .card{
+        margin-top: 200px;
+        margin-left: 350px;
+        width:600px;
+        height:200px;
+        box-sizing: border-box;
+        box-shadow: 0 2px 4px 0;
+    }
+    h2{
+        color:darkgreen;
+        text-align: center;
+    }
+    h3{
+        color:darkred;
+        text-align: center;
+    }
+    #or{
+        color:darkblue;
+        font-size: 30px;
+        margin-left: 230px;
+        text-decoration: none;
+    }
+    #b{
+        color:rgb(41, 140, 132);
+        font-size: 20px;
+        margin-left: 280px;
+        text-decoration: none;
+
+    }
+</style>
+<body style="background-image: url({% static 'images/order.jpg' %});">
+    <div class="card">
+        <h2>{{success}}</h2>
+        <h3>Your Order Received on {{current_date}} and will reach you on {{future_date}}</h3>
+        <a href="/newstockview"id="or">Order Again</a>
+        <a href="/userbill"id="b">Bill</a>
+    </div>
+</body>
