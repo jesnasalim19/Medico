@@ -1,0 +1,173 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+    .card-registration .select-input.form-control[readonly]:not([disabled]) {
+font-size: 1rem;
+line-height: 2.15;
+padding-left: .75em;
+padding-right: .75em;
+}
+.card-registration .select-arrow {
+top: 13px;
+}
+</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="favicon.png">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap5" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}">
+	<link rel="stylesheet" href="{% static 'css/aos.css' %}">
+	<link rel="stylesheet" href="{% static 'css/glightbox.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/flatpickr.min.css' %}">
+
+
+	<title>Medico</title>
+</head>
+<body>
+
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	<nav class="site-nav">
+		<div class="container">
+			<div class="menu-bg-wrap">
+				<div class="site-navigation">
+					<div class="row g-0 align-items-center">
+						<div class="col-2">
+							<a class="logo m-0 float-start">Medico<span class="text-primary">.</span></a>
+						</div>
+						<div class="col-8 text-center">
+							<form action="#" class="search-form d-inline-block d-lg-none">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="bi-search"></span>
+							</form>
+
+							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+                                <li class="active"><a href="/ShopOwner/shophome">Home</a></li>
+								<li><a href="/ShopOwner/mednewreg">Medicines</a></li>
+								<li><a href="/ShopOwner/shoplog">Sign Out</a></li>
+								
+                               
+							</ul>
+						</div>
+						<div class="col-2 text-end">
+							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+								<span></span>
+							</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+
+<form action="/ShopOwner/mednewreg"method="post"enctype="multipart/form-data">
+    {% csrf_token %}
+    
+<section class="h-100"style="background-color:#647691;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="{% static 'images/mednew.avif' %}"alt="Sample photo" class="img-fluid"style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;margin-top:60px;margin-left:20px;height:600px;width:500px;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <h3 class="mb-5 text-uppercase"style="color:#12428c;">Medicine registration</h3>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" name="mn"id="form3Example1m" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example1m">Medicine Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="file"name="mi"id="form3Example1n"class="form-control form-control-lg" >
+                        <label class="form-label" for="form3Example1n">Image</label>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="number"name="pr"id="form3Example1m1" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Example1m1">Price</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <textarea name="des"></textarea>
+                        <label class="form-label" for="form3Example1n1">Description</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text"name="cat" id="form3Example8" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example8">Category</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text"name="bran" id="form3Example8" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example8">Brand</label>
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="text"name="dis" id="form3Example8" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example8">Disease</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="date"name="mfg" id="form3Example9" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example9">MFG Date</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="date"name="exp" id="form3Example10" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example10">Expiry Date</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="number"name="qt" id="form3Example10" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3Example10">Quantity</label>
+                  </div>
+                  <button type="submit" class="btn btn-lg ms-2"style="background-color:#4f5d73;color:white;">Submit</button>
+                  </div>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>

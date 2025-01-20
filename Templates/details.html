@@ -1,0 +1,65 @@
+{% load static %}
+<style>
+    table{
+        padding-top: 40px;
+    }
+    h1{
+        padding-top: 40px;
+        color:brown;
+        
+    }
+    th{
+       background-color: darkseagreen;
+       color:rgb(18, 119, 207);
+       font-size:20;
+    }
+    tr{
+        background-color: rgb(132, 173, 235);
+       color:rgb(228, 199, 225);
+       font-size:20;
+
+    }
+    button{
+        background-color: lightpink;
+        border-color: lightpink ;
+        
+    }
+    a{
+        text-decoration: none;
+        color:aliceblue;
+    }
+</style>
+<body style="background-image:url({% static 'images/user.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <a href="/AdminApp/adminhome">Go Back</a>
+    <center>
+    <form method="post"action="/AdminApp/userview">
+    
+    {% csrf_token %}
+    <h1>USER DETAILS</h1>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Mobile Number</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Confirm Password</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            {% for m in data %}
+            <tr>
+                <td>{{m.fnm}}</td>
+                <td>{{m.mob}}</td>
+                <td>{{m.eml}}</td>
+                <td>{{m.psw1}}</td>
+                <td>{{m.psw2}}</td>
+                <td><button><a href="/AdminApp/edit?idn={{m.id}}">Edit</a></button></td>
+                <td><button><a href="AdminApp/delete?idn={{m.id}}">Delete</a></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+</center>
+</body>

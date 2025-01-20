@@ -1,0 +1,254 @@
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Untree.co">
+	<link rel="shortcut icon" href="favicon.png">
+
+	<meta name="description" content="" />
+	<meta name="keywords" content="bootstrap, bootstrap5" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+
+	<link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+	<link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+	<link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}">
+	<link rel="stylesheet" href="{% static 'css/aos.css' %}">
+	<link rel="stylesheet" href="{% static 'css/glightbox.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/flatpickr.min.css' %}">
+
+
+	<title>Medico</title>
+</head>
+<body>
+
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	<nav class="site-nav">
+		<div class="container">
+			<div class="menu-bg-wrap">
+				<div class="site-navigation">
+					<div class="row g-0 align-items-center">
+						<div class="col-2">
+							<a class="logo m-0 float-start">Medico<span class="text-primary">.</span></a>
+						</div>
+						<div class="col-8 text-center">
+							<form action="#" class="search-form d-inline-block d-lg-none">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="bi-search"></span>
+							</form>
+
+							<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
+								<li class="active"><a href="/">Home</a></li>
+								<li><a href="reg">User</a></li>
+								<li><a href="/ShopOwner/shoplog">Shop Owner</a></li>
+								
+							</ul>
+						</div>
+						<div class="col-2 text-end">
+							<a href="#" class="burger ms-auto float-end site-menu-toggle js-menu-toggle d-inline-block d-lg-none light">
+								<span></span>
+							</a>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+<form action="reg"method="post">
+    {% csrf_token %}
+<section class="vh-100" style="background-color:#F4C2C2;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5"> 
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"style="color:#1d4d20">Sign Up</p>
+  
+                  <form class="mx-1 mx-md-4">
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text"name="fn" id="form3Example1c" class="form-control" required/>
+                        <span id="sfn"></span>
+                        <label class="form-label" for="form3Example1c"style="color:#1d4d20">Your Name</label>
+                      </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-outline flex-fill mb-0">
+                          <input type="tel"name="mb"id="form3Example3c" class="form-control" required/>
+                          <span id="smb"></span>
+                          <label class="form-label" for="form3Example3c"style="color:#1d4d20">Your Mobile</label>
+                        </div>
+                      </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="email"name="em"id="form3Example3c" class="form-control" required/>
+                        <span id="sem"></span>
+                        <label class="form-label" for="form3Example3c"style="color:#1d4d20">Your Email</label>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password"name="ps"id="form3Example4c" class="form-control" required/>
+                        <span id="sps"></span>
+                        <label class="form-label" for="form3Example4c"style="color:#1d4d20">Password</label>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="password"name="cps"id="form3Example4cd" class="form-control"required />
+                        <span id="scps"></span>
+                        <label class="form-label" for="form3Example4cd"style="color:#1d4d20">Repeat your password</label>
+                      </div>
+                    </div>
+  
+                    <div class="form-check d-flex justify-content-center mb-5">
+                      <input type="checkbox">&nbsp;&nbsp;
+                      <label class="form-check-label" for="form2Example3">
+                        I agree all statements in <a href="#!">Terms of service</a>
+                      </label>
+                    </div>
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn  btn-lg"style="background-color:#F4C2C2;color:#1d4d20;">Register</button>
+                    </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                       <p class="small fw-bold mt-2 pt-1 mb-0">Already Registered? <a href="log"class="link-danger">Login</a></p>
+                    </div>
+  
+                  </form>
+  
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="{% static 'images/reg.jpg' %}"class="img-fluid" alt="Sample image"style="margin-top:-60px;width:700px;height:500px;border-radius:10px;">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</form>
+<script>
+  $(function(){
+    $('#sfn').hide();
+    $('#smb').hide();
+    $('#sps').hide();
+    $('#scps').hide();
+    $('#form3Example1c').focusout(function(){error_fname()});
+    $('#form3Example3c').focusout(function(){error_mobile()});
+    $('#form3Example4c').focusout(function(){error_password()});
+    $('#form3Example4cd').focusout(function(){error_conpassword()});
+    function error_fname(){
+      var fn = $('#form3Example1c').val();
+      const regf = /^[A-Z a-z]+$/;
+      if(!regf.test(fn)){
+        $('#sfn').html("Only Alphabets allowed in Name!..")
+        $('#sfn').show();
+        $('#sfn').css('color','#ff0000');
+        $('#form3Example1c').css('border-bottom-color','#ff0000');
+
+      }
+      else{
+        $('#sfn').hide();
+        $('#form3Example1c').css('border-bottom-color','#008000');
+
+      }
+    }
+    function error_mobile(){
+      var mb = $('#form3Example3c').val();
+      const regm = /^[0-9]+$/;
+      if(!regm.test(mb)){
+        $('#smb').html("Only Positive values allowed in Mobile Number");
+        $('#smb').show();
+        $('#smb').css('color','#ff0000');
+        $('#form3Example3c').css('border-bottom-color','#ff0000');
+        
+      }
+      else if(mb.length!=10){
+        $('#smb').html("Mobile Number must contain 10 digits");
+        $('#smb').show();
+        $('#smb').css('color','#ff0000');
+        $('#form3Example3c').css('border-bottom-color','#ff0000')
+
+      }
+      else{
+        $('#smb').hide();
+        $('#form3Example3c').css('border-bottom-color','#008000')
+
+      }
+    }
+    function error_password(){
+      var ps1 = $('#form3Example4c').val();
+      const regp = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
+      if(!regp.test(ps1)){
+        $('#sps').html("Password length must be in between 6-16, Password must contain atleast one alphabet,number and special symbol such as @#$%^&* etc..");
+        $('#sps').show();
+        $('#sps').css('color','#ff0000');
+        $('#form3Example4c').css('border-bottom-color','#ff0000');
+
+      }
+      else{
+        $('#sps').hide();
+        $('#form3Example4c').css('border-bottom-color','#008000');
+
+      }
+    }
+    function error_conpassword(){
+      var ps1 = $('#form3Example4c').val();
+      var ps2 = $('#form3Example4cd').val();
+      if(ps1!=ps2){
+        $('#scps').html("Password and confirm password must be same!..");
+        $('#scps').show();
+        $('#scps').css('color','#ff0000');
+        $('#form3Example4cd').css('border-bottom-color','#ff0000');
+
+      }
+      else{
+        $('#scps').hide();
+        $('#form3Example4cd').css('border-bottom-color','#008000');
+        
+
+      }
+
+    }
+
+  });
+</script>

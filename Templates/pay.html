@@ -1,0 +1,69 @@
+{% load static %}
+<head>
+<link rel="stylesheet"href="{% static 'css/pay.css' %}">
+<title>Medico</title>
+</head>
+<form action="pay"method="post">
+  {% csrf_token %}
+<div class="container">
+  <div class="card-container">
+    <div class="left">
+      <h1>Your Order</h1>
+      {% for m in cartitems %}
+      <div class="order-items">
+        <img src="{{m.product.mim.url}}">
+        <div class="item">
+          <span>{{m.product.mnm}}</span>
+          <input type="text"name="pro"value="{{m.product.mnm}}"hidden>
+          <span>Qty: {{m.qty}}</span>
+          <input type="text"name="qty"value="{{m.qty}}"hidden>
+        </div>
+        <input type="text"name="prc"value="{{m.product.mpr}}"hidden>
+        <span class="item-price">{{m.product.mpr}}</span>
+      </div>
+      {% endfor %}
+      <p style="color:rgb(15, 15, 95);font-size: 25px;">Total: <input type="text" readonly value="{{total_price}}"name="tot"style="border:none;width:70px;color:rgb(15, 15, 95);font-size:25px;">Rs/-</p>
+    </div>
+    <div class="right">
+      <h1>Payment</h1>
+      <span></span>
+      <div class="form-container">
+       
+          <div class="payment-section">
+            <label for="payment">Payment Method</label>
+           
+            <input type="text" name="payment" id="payment"/> 
+          </div>
+          <div class="input-items flex">
+            <div class="marginright">
+              <label for="firstName">Card Holder Name</label>
+              <input type="text" name="fn" value="{{user}}"id="fn" />
+            </div>
+          </div>
+          <div class="input-items">
+            <label for="cardNumber">Card Number</label>
+            <input type="text" name="cd" id="cd"/>
+          </div>
+          <div class="input-items flex">
+            <div>
+              <label for="cardNumber">Expiration Date</label>
+              <div class="flex marginright">
+               
+                <input type="date" name="ex" id="ex" />
+              </div>
+            </div>
+            <div>
+              <label for="cardNumber">CVV</label>
+              <input type="text" name="cvv" id="cvv" />
+            </div>
+          </div>
+          <div class="submit">
+            <button type="submit">Submit</button>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+

@@ -1,0 +1,73 @@
+{% load static %}
+<style>
+    table{
+        padding-top: 40px;
+    }
+    h1{
+        padding-top: 40px;
+        color: rgb(142, 19, 199);
+        
+    }
+    th{
+       background-color: rgb(245, 157, 42);
+       color:rgb(18, 119, 207);
+       font-size:20;
+    }
+    tr{
+        background-color: rgb(142, 19, 199);
+       color:rgb(228, 199, 225);
+       font-size:20;
+
+    }
+    button{
+        background-color: lightpink;
+        border-color: lightpink ;
+        
+    }
+    a{
+        text-decoration: none;
+        color:aliceblue;
+    }
+</style>
+<body style="background-image:url({% static 'images/booking.jpg' %});background-repeat:no-repeat;background-size:cover;">
+    <a href="/AdminApp/adminhome">Go Back</a>
+    <center>
+    <form method="post"action="/AdminApp/userview">
+      
+    
+    {% csrf_token %}
+    
+    <h1>ORDERS</h1>
+    <table>
+        <thead>
+            <th>Medicine Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Card Holder Name</th>
+            <th>Card Number</th>
+            <th>Expiry Date</th>
+            <th>CVV</th>
+            <th>Confirm</th>
+            <th>Cancellation</th>
+        </thead>
+        <tbody>
+            {% for m in data %}
+            <tr>
+                <td>{{m.pro}}</td>
+                <td>{{m.prc}}</td>
+                <td>{{m.qty}}</td>
+                <td>{{m.tot}}</td>
+                <td>{{m.fn}}</td>
+                <td>{{m.cd}}</td>
+                <td>{{m.ex}}</td>
+                <td>{{m.cvv}}</td>
+                <td><button><a href="/AdminApp/confirmbook?idn={{m.id}}">Confirm Order</a></button></td>
+                <td><button><a href="/AdminApp/cancelbook?idn={{m.id}}">Cancell Order</a></button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+</center>
+</body>
